@@ -1,0 +1,3 @@
+rootProject.name = 'pictureToPdf'
+include 'src'
+
