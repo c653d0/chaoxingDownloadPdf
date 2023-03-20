@@ -2,14 +2,24 @@ import java.io.File;
 
 public class MainClass {
     public static void main(String[] args) {
-        String url = "https://pan-yz.xueyinonline.com/screen/file_dc7a0531343e021f687aa467049e681d";
-        String pdfName = "干涉.pdf";
+        //将连接粘贴到url里边
+        //注意:
+        //     需要将链接最后一个斜杠后面的内容删除
+        //示例：
+        //     复制的链接为：https://s3.ananas.chaoxing.com/doc/be/0a/ea/e506a185e985d2bcb62d04b2459c3c3b/thumb/1.png
+        //     粘贴的链接为：https://s3.ananas.chaoxing.com/doc/be/0a/ea/e506a185e985d2bcb62d04b2459c3c3b/thumb/
 
-        saveAsPdf(pdfName,url,0,0);
+        String url = "https://s3.ananas.chaoxing.com/doc/be/0a/ea/e506a185e985d2bcb62d04b2459c3c3b/thumb/";
+
+        //这个设置pdf的名字
+        String pdfName = "test.pdf";
+
+        //设置要下载的页数，第一个数字为起始页最小为1，第二个数字为结束也最多不超过pdf的总页数
+        saveAsPdf(pdfName,url,1,11);
     }
 
     private static void saveAsPdf(String pdfName, String url, int start, int end){
-        // 设置路径
+        // 设置pdf保存的路径
         String picFolderPath = "D:\\downloadPdf\\pic\\";
         String pdfFolderPath = "D:\\downLoadPdf\\pdf\\";
 
